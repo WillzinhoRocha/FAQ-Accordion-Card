@@ -78,7 +78,7 @@ h3 {
   border: none;
   background: transparent;
   text-align: left;
-  padding: 0;
+  padding: 0.2rem;
   font-size: 1.2rem;
   font-family: "Kumbh Sans", sans-serif;
   margin-bottom: 1rem;
@@ -91,16 +91,40 @@ h3 {
   display: block;
   width: 0.625rem;
   height: 1rem;
+  border: none;
   background-image: url("../images/icon-arrow-down.svg");
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: center;
+  background-position: center center;
+  transition: transform 300ms ease-in-out;
+}
+.accordion-question:focus,
+.accordion-question:focus-visible {
+  border: none;
+  outline: dashed 1px rgba(0, 0, 0, 0.25);
+}
+
+.accordion-question.open {
+  font-weight: 700;
+}
+.accordion-question.open::after {
+  transform: rotate(180deg);
 }
 .accordion-content {
   font-size: 1rem;
   line-height: 1.4;
   margin-bottom: 1rem;
 }
+.accordion-collapse.collapse {
+  display: none;
+}
+.accordion-collapse.collapsing {
+}
+.accordion-collapse.open {
+  display: block;
+}
+
+/* DESKTOP STYLE*/
 @media (min-width: 56rem) {
   body {
     padding: 5rem;
